@@ -1,0 +1,155 @@
+#Q1. find the factorial of a number
+def factorial(num):
+    if (num==0 or num==1):
+        return 1
+    else:
+        return num * factorial(num-1) 
+
+    
+
+num=int(input("enter a number for a factorial"))
+print(factorial(num))
+
+
+
+#Q2.check wheter a function is a armstrong or not 
+
+def is_armstrong_number(num):
+    # Convert the number to a string to find the number of digits
+    num_str = str(num)
+    num_digits = len(num_str)
+    
+    # Calculate the sum of the digits raised to the power of the number of digits
+    armstrong_sum = sum(int(digit) ** num_digits for digit in num_str)
+    
+    # Check if the sum is equal to the original number
+    return armstrong_sum == num
+
+if __name__ == "__main__":
+    number = int(input("Enter a number to check if it's an Armstrong number: "))
+    if is_armstrong_number(number):
+        print(number, "is an Armstrong number.")
+    else:
+        print(number, "is not an Armstrong number.")
+
+#Q3 Print Fibonacci series up to given term.
+def fibonacci(n):
+    fib_series = []
+    a, b = 0, 1
+    while len(fib_series) < n:
+        fib_series.append(a)
+        a, b = b, a + b
+    return fib_series
+
+# Change the value of 'n' to specify the number of terms you want in the Fibonacci series
+n = 10  # Change this to the desired number of terms
+fib_series = fibonacci(n)
+print("Fibonacci series up to {} terms:".format(n))
+print(fib_series)
+
+#Q4. Write a program to find if given number is prime number or not.
+def is_prime(num):
+    if num <= 1:
+        return False
+    elif num <= 3:
+        return True
+    elif num % 2 == 0 or num % 3 == 0:
+        return False
+    i = 5
+    while i * i <= num:
+        if num % i == 0 or num % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+#Q5 Input a number to check if it's prime
+num = int(input("Enter a number: "))
+
+if is_prime(num):
+    print(f"{num} is a prime number.")
+else:
+    print(f"{num} is not a prime number.")
+
+#Q6 check a number a pallondroime
+def is_palindrome(num):
+    # Convert the number to a string
+    num_str = str(num)
+    # Compare the string with its reverse
+    return num_str == num_str[::-1]
+
+#Q7 Input a number to check if it's a palindrome
+num = input("Enter a number: ")
+
+if is_palindrome(num):
+    print(f"{num} is a palindrome.")
+else:
+    print(f"{num} is not a palindrome.")
+
+#Q8 Write a program to print sum of digits.
+def sum_of_digits(num):
+    # Convert the number to a string
+    num_str = str(num)
+    # Initialize sum
+    digit_sum = 0
+    # Iterate over each digit in the string
+    for digit in num_str:
+        # Convert the digit back to integer and add it to the sum
+        digit_sum += int(digit)
+    return digit_sum
+
+# Input a number
+num = int(input("Enter a number: "))
+
+# Calculate the sum of digits
+result = sum_of_digits(num)
+
+print("Sum of digits of {} is: {}".format(num, result))
+
+#Q9 Count and print all numbers divisible by 5 or 7 between 1 to 100.
+def count_divisible_5_or_7(start, end):
+    count = 0
+    divisible_numbers = []
+
+    for num in range(start, end + 1):
+        if num % 5 == 0 or num % 7 == 0:
+            count += 1
+            divisible_numbers.append(num)
+
+    return count, divisible_numbers
+
+start = 1
+end = 100
+
+count, divisible_numbers = count_divisible_5_or_7(start, end)
+
+print("Count of numbers divisible by 5 or 7 between {} and {}: {}".format(start, end, count))
+print("Numbers divisible by 5 or 7 between {} and {}: {}".format(start, end, divisible_numbers))
+
+#Convert all lower cases to upper case in a string.
+def convert_to_uppercase(input_string):
+    return input_string.upper()
+
+# Input string
+input_string = input("Enter a string: ")
+
+# Convert to uppercase
+uppercase_string = convert_to_uppercase(input_string)
+
+print("Original String:", input_string)
+print("Uppercase String:", uppercase_string)
+
+#Q10
+
+def print_multiplication_table(number, table_range):
+    print(f"Multiplication table for {number}:")
+    for i in range(1, table_range + 1):
+        print(f"{number} * {i} = {number * i}")
+
+# Input number for which you want to print the table
+number = int(input("Enter a number: "))
+
+# Input range for the table
+table_range = int(input("Enter the range for the table: "))
+
+print_multiplication_table(number, table_range)
+
