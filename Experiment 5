@@ -1,0 +1,177 @@
+#1. Write a program to count and display the number of capital letters in a given string
+
+def count_capital_letters(input_string):
+    count = 0
+    for char in input_string:
+        if char.isupper():
+            count += 1
+    return count
+
+# Input string
+input_string = input("Enter a string: ")
+
+# Count capital letters
+capital_count = count_capital_letters(input_string)
+
+print("Number of capital letters in the string:", capital_count)
+
+#2.Count total number of vowels in a given string-----------------
+
+def count_vowels(input_string):
+    vowels = "aeiouAEIOU"
+    vowel_count = 0
+    for char in input_string:
+        if char in vowels:
+            vowel_count += 1
+    return vowel_count
+
+# Input string
+input_string = input("Enter a string: ")
+
+# Count vowels
+vowel_count = count_vowels(input_string)
+
+print("Total number of vowels in the string:", vowel_count)
+
+#3.Input a sentence and print words in separate lines-----------
+
+def print_words_separate_lines(sentence):
+    words = sentence.split()
+    for word in words:
+        print(word)
+
+# Input sentence
+sentence = input("Enter a sentence: ")
+
+# Print words in separate lines
+print("Words in separate lines:")
+print_words_separate_lines(sentence)
+
+
+#4......
+
+def count_substring(string, substring):
+    count = 0
+    for i in range(len(string) - len(substring) + 1):
+        if string[i:i + len(substring)] == substring:
+            count += 1
+    return count
+
+if __name__ == '__main__':
+    string = input("Enter the string: ")
+    substring = input("Enter the substring: ")
+    result = count_substring(string, substring)
+    print("Number of times the substring occurs:", result)
+
+
+#5.Given a string containing both upper and lower case alphabets. Write a Python
+#program to count the number of occurrences of each alphabet (case insensitive)
+#and display the same.
+
+def count_alphabets(input_string):
+    # Initialize a dictionary to store the counts
+    count_dict = {}
+
+    # Convert the string to lower case to make the count case insensitive
+    input_string = input_string.lower()
+
+    # Iterate over each character in the string
+    for char in input_string:
+        # Check if the character is an alphabet
+        if char.isalpha():
+            # If the character is already in the dictionary, increment its count
+            if char in count_dict:
+                count_dict[char] += 1
+            # If the character is not in the dictionary, add it with a count of 1
+            else:
+                count_dict[char] = 1
+
+    # Return the dictionary with the counts
+    return count_dict
+
+# Test the function
+print(count_alphabets("Hello World"))
+
+
+#Q6. 
+def count_unique_words(sentence):
+    # Split the sentence into words
+    words = sentence.split()
+
+    # Convert the list of words into a set to remove duplicates
+    unique_words = set(words)
+
+    # Return the count of unique words
+    return len(unique_words)
+
+# Example:
+sentence = "This is a sample sentence with sample words"
+print("Number of unique words:", count_unique_words(sentence))
+
+#Q7.
+
+def main():
+    # Taking input for the number of fruits and the fruits themselves for both sets
+    n = int(input("Enter the number of fruits in each set: "))
+    print("Enter fruits for set 1:")
+    s1 = set(input_fruits(n))
+    print("Enter fruits for set 2:")
+    s2 = set(input_fruits(n))
+
+    # Fruits which are in both sets s1 and s2
+    common_fruits = s1.intersection(s2)
+    print("Fruits in both sets:", common_fruits)
+
+    # Fruits only in s1 but not in s2
+    exclusive_to_s1 = s1.difference(s2)
+    print("Fruits only in set 1:", exclusive_to_s1)
+
+    # Count of all fruits from s1 and s2
+    total_fruits = len(s1.union(s2))
+    print("Total count of fruits in both sets:", total_fruits)
+
+
+def input_fruits(n):
+    fruits = []
+    for i in range(n):
+        fruit = input("Enter fruit {}: ".format(i + 1))
+        fruits.append(fruit)
+    return fruits
+
+if __name__ == "__main__":
+    main()
+
+#Q8
+
+def main():
+    # Define the sets
+    S1 = {"Red", "Yellow", "Orange", "Blue"}
+    S2 = {"Violet", "Blue", "Purple"}
+
+    # Print the original sets
+    print("Original sets:")
+    print("S1:", S1)
+    print("S2:", S2)
+    print()
+
+    # Union of sets S1 and S2
+    print("Union of sets S1 and S2:", S1.union(S2))
+
+    # Intersection of sets S1 and S2
+    print("Intersection of sets S1 and S2:", S1.intersection(S2))
+
+    # Difference between sets S1 and S2
+    print("Difference between sets S1 and S2:", S1.difference(S2))
+
+    # Symmetric difference between sets S1 and S2
+    print("Symmetric difference between sets S1 and S2:", S1.symmetric_difference(S2))
+
+    # Check if S1 is a subset of S2
+    print("Is S1 a subset of S2:", S1.issubset(S2))
+
+    # Check if S1 is a superset of S2
+    print("Is S1 a superset of S2:", S1.issuperset(S2))
+
+
+if __name__ == "__main__":
+    main()
