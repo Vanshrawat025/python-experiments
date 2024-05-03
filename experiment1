@@ -1,0 +1,42 @@
+#ques 1. install python and run a program...
+
+#ques 2
+print("Hello Everyone !!!")    #Ques 2.a
+print("Hello\nWorld")          #Ques 2.b
+print("Hello\n\tWorld")        #Ques 2.c
+print("'Rohit's date of birth is 12\05\1999'")   #Ques 2.d
+
+x="Hello"  #Ques 3
+print(x)
+
+a=19       #Ques 4
+b=20.001
+c="hello"
+d=90/6
+print(a,b,c,d)
+
+m="Vansh"     #ques 5
+n=" Rawat"
+print(m+n)
+
+e="Vansh"      #ques 6
+f="Rawat"
+nick_name="(nickname)"
+print( e+ nick_name+ f)
+
+#ques 7
+
+NAME="NIKUNJ BANSAL\n"
+SAP_ID="50006944\n"
+DATE_OF_BIRTH="13 OCT 1999\n"
+ADDRESS="UPES\n\tBIDHOLI CAMPUS\n\tPincode:248007"
+Programme="AI & ML\n"
+SEMESTER=2
+print("NAME:",NAME)
+print("SAP ID:",SAP_ID)
+print("DATE OF BIRTH:",DATE_OF_BIRTH)
+print("ADDRESS:",ADDRESS)
+print("Programme:",Programme)
+print("Semester:",SEMESTER)
+
+
