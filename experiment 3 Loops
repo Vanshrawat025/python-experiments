@@ -1,0 +1,140 @@
+#Ques 1. Check whether given number is divisible by 3 and 5 both
+
+num = int(input("Enter a number : "))
+if num % 3 == 0 and num % 5 == 0:
+    print(f"The number {num} is divisible by both.")
+else:
+    print(f"The number {num} is not divisible by both.")
+print("\n")
+
+#Ques 2
+# Take input from the user
+num = int(input("Enter a number: "))
+# Check if the number is divisible by 5
+if num % 5 == 0:
+    print(f"The number {num} is divisible by 5.")
+else:
+    print(f"The number {num} is not divisible by 5.")
+print("\n")
+
+
+#Ques 3
+# Take input from the user
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+
+if num1 > num2: # Check which number is greater
+    print(f"The number {num1} is greater.")
+elif num1 < num2:
+    print(f"The number {num2} is greater.")
+else:
+    print("The numbers are equal.")
+print("\n")
+
+print("/n")
+
+#ques 4
+num1 = float(input("Enter the first number : "))
+num2 = float(input("Enter the second number : "))
+num3 = float(input("Enter the third number : "))
+#check which number is greater
+if (num1 > num2) and (num1 > num3) :
+    print(f"the number {num1} is greatest")
+elif (num2 > num1) and (num2 > num3) :
+    print(f"The number {num2} is greatest.")
+else :
+    print(f"The number {num3} is greatest.")
+print("\n")
+
+
+
+#Ques 5
+import cmath
+a = float(input("Enter the coefficient a : "))
+b = float(input("Enter the coefficient b : "))
+c = float(input("Enter the coefficient c : "))
+# calculate the discriminant
+D = (b**2) - (4*a*c)
+#checking the nature of root
+if D > 0:
+    root1 = (-b + cmath.sqrt(D)) / (2 * a)
+    root2 = (-b - cmath.sqrt(D)) / (2 * a)
+    print("The roots are real and different.")
+elif D == 0:
+    root1 = root2 = -b / (2 * a)
+    print("The roots are real and same.")
+else:
+    root1 = (-b + cmath.sqrt(D)) / (2 * a)
+    root2 = (-b - cmath.sqrt(D)) / (2 * a)
+    print("The roots are complex and different.")
+print(f"The roots are {root1} and {root2}.")
+
+
+
+
+#Ques 6
+year = int(input("Enter a year: "))
+# Check if the year is a leap year
+if year % 4 == 0:
+    if year % 100 == 0:
+        if year % 400 == 0:
+            print(f"{year} is a leap year.")
+        else:
+            print(f"{year} is not a leap year.")
+    else:
+        print(f"{year} is a leap year.")
+else:
+    print(f"{year} is not a leap year.")
+
+#7. Write a program which takes any date as input and display next date of the calender
+
+import datetime
+
+def next_date(current_date):
+    try:
+        return (datetime.datetime.strptime(current_date, "%Y-%m-%d") + datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+    except ValueError:
+        return "Invalid date format. Please use YYYY-MM-DD format."
+
+if __name__ == "__main__":
+    date_input = input("Enter a date (YYYY-MM-DD format): ")
+    print("Next date:", next_date(date_input))
+
+#8. Print the grade sheet of a student for the given range of cgpa. Scan marks of five subjects and calculate the percentage
+    
+def calculate_cgpa(percentage):
+    cgpa = percentage / 10
+    if cgpa >= 9.1:
+        return 'O (Outstanding)'
+    elif cgpa >= 8.1:
+        return 'A+'
+    elif cgpa >= 7.1:
+        return 'A'
+    elif cgpa >= 6.1:
+        return 'B+'
+    elif cgpa >= 5.1:
+        return 'B'
+    elif cgpa >= 3.5:
+        return 'C+'
+    else:
+        return 'F'
+
+def calculate_percentage(marks):
+    total_marks = sum(marks)
+    percentage = (total_marks / (len(marks) * 100)) * 100
+    return percentage
+
+def main():
+    marks = []
+    for i in range(5):
+        marks.append(int(input("Enter marks for subject {}: ".format(i+1))))
+
+    percentage = calculate_percentage(marks)
+    print("Percentage:", percentage)
+
+    cgpa = calculate_cgpa(percentage)
+    print("CGPA:", cgpa)
+
+if __name__ == "__main__":
+    main()
+
