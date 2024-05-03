@@ -1,0 +1,73 @@
+#ques 1
+x=9
+y=7
+z=10
+print("addition:",x+y)
+print("subtraction:",x-y)
+print("multiplication:",x*y)
+print("division:",x/y)
+
+#ques 2
+a=float(input("enter the radius to compute the area of the circle"))
+b=3.14
+print("the area is ",b*a*a)
+
+#ques 3
+x=4
+y=3
+eq=(x+y)*(x+y)
+print(eq)
+
+#ques 4
+import math
+side1=float(input("Enter first side:"))
+side2=float(input("Enter second side:"))
+hypotenuse=math.sqrt(side1*2 + side2*2)
+print("hypotenuse is:", hypotenuse)
+
+print("\n")
+
+#ques 5
+Principle=float(input("Enter Principle:"))
+Rate=float(input("Enter Rate:"))
+Time_period=float(input("Enter time period:"))
+SimpleInterest= (Principle*Rate*Time_period)/100
+print("Simple Interest is:", SimpleInterest)
+
+print("\n")
+
+#ques6
+import math
+p=int(input("first side"))
+q=int(input("second side"))
+r=int(input("third side"))
+s=(p+q+r)/2
+print("semi-perimeter is: ", s)
+A= math.sqrt(s*(s-p)(s-q)(s-r))
+print("Area is:", A)
+
+print("\n")
+
+#ques 7
+seconds=float(input("Enter seconds:"))
+minutes=seconds/60
+hours=minutes/60
+print("time in minutes is:", minutes)
+print("time in hours is:", hours)
+
+print("\n")
+
+#ques 8
+num1=int(input("Enter number 1: "))
+num2=int(input("Enter number 2: "))
+print("After swapping first number is:", num2)
+print("After swapping second number is:", num1)
+
+print("\n")
+
+#ques 9
+N=int(input("Enter value upto you want sum: "))
+result = (N*(N+1))/2
+print("The sum is: ", result)
+
+print("\n")
